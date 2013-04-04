@@ -38,7 +38,10 @@
 	<script type="text/javascript">
 		$(function(){
 
-			$.getJSON("http://pipes.yahoo.com/pipes/pipe.run?_id=9d9e40c2b0589de762a385e4312ce535&_render=json", function(data) {
+			var PIPE_URL = "http://pipes.yahoo.com/pipes/pipe.run?_id=9d9e40c2b0589de762a385e4312ce535&_render=json";
+
+			$.getJSON(PIPE_URL, function(data) {
+				
 				var twitter_template = $("#twitter_template").html();
 				var facebook_template = $("#facebook_template").html();
 				var instagram_template = $("#instagram_template").html();
