@@ -9,29 +9,12 @@
 
 <body>
 
-	<h1>Aggregator Test</h1>
-
-	<ol id="feed">
+	<ol id="feed" class="socialitems l-grid">
 	</ol>
 
-	<script type="text/html" id='twitter_template'>
-        <li class="twitter"><%= i.title %><span class="type">twitter</span>	</li>
-	</script>
-
-	<script type="text/html" id='facebook_template'>
-        <li class="twitter"><%= i.title %><span class="type">facebook</span>	</li>
-	</script>
-
-	<script type="text/html" id='instagram_template'>
-        <li class="instagram">
-	        <%= i.title %>
-	        <img src="<%= i['media:content'].url %>" />
-	        <span class="type">instagram</span>	
-	    </li>
-	</script>
-
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+	<script src="js/jquery.masonry.min.js"></script>
 
 	<script type="text/javascript">
 		$(function(){
@@ -58,45 +41,32 @@
 						default:
 					}
     			});
+
+    			$('#feed').masonry({
+					// options
+					itemSelector : '.socialitem',
+					columnWidth: function( containerWidth ) {
+						return containerWidth / 3;
+					}
+				});
 			});
-			// var collection = Backbone.Collection.extend({
-			// 	url: 'http://pipes.yahoo.com/pipes/pipe.run?_id=9d9e40c2b0589de762a385e4312ce535&_render=json'
-			// });
-
-			// var ListView = Backbone.View.extend({
-				
-			// 	template: _.template($('#feed_template').html()),
-
-			// 	render: function() {
-			//     	_.each(this.collection.models, function(model){
-			//     		var lTemplate = this.template(model.toJSON());
-
-			// 	    	$(this.el).append(lTemplate);
-			//     	}, this);
-			// 		return this;
-			// 	}
-			// });
-
-			// var AppView = Backbone.View.extend({
-	  // 			el: "body",
-
-			//   	render: function(){
-			//   		debugger;
-			// 		var listView = new listView({ 'collection': collection});
-			// 		var lHtml = listView.render().el;
-			// 		$('#feeds').html(lHtml);
-			// 	},
-
-			//   	initialize: function(){
-			// 	    var lOptions = {};
-			// 	    lOptions.success = this.render;
-			// 	    this.collection.fetch(lOptions);
-			// 	}
-			// });
-
-			// var collection = new collection();
-			// var App = new AppView({ 'collection': collection});
 		});
+	</script>
+
+	<script type="text/html" id='twitter_template'>
+        <li class="socialitem socialitem-twitter"><%= i.title %><span class="socialitem-type">twitter</span>	</li>
+	</script>
+
+	<script type="text/html" id='facebook_template'>
+        <li class="socialitem socialitem-facebook"><%= i.title %><span class="socialitem-type">facebook</span>	</li>
+	</script>
+
+	<script type="text/html" id='instagram_template'>
+        <li class="socialitem socialitem-instagram">
+	        <%= i.title %>
+	        <img src="<%= i['media:content'].url %>" />
+	        <span class="socialitem-type">instagram</span>	
+	    </li>
 	</script>
 
 </body>

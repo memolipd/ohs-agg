@@ -1,19 +1,63 @@
+/******************
+* BASE
+******************/
+
 body {
-	background-color: #999;
-}
-li {
-	position: relative;
+	margin: 50px 100px;
 }
 
-li img {
-	width: 200px;
+/******************
+* LAYOUTS
+******************/
+
+.l-grid {
+	margin: 0;
+	padding: 0;
 }
-.type {
-	background: red;
-	color: white;
+
+.l-grid > * {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+	width: 29%;
+	margin: 5px 0.9% 5px 1%;
+}
+
+/******************
+* Modules
+******************/
+
+.socialitem {
+	background: #222;
+	padding: 10px;
+}
+
+.socialitem-instagram img {
+	max-width: 100%;
+	height: auto;
+}
+
+.socialitem-type {
 	padding: 5px 8px;
 	position: absolute;
 	top: 0;
 	right: 0;
 }
 
+/******************
+* Theming
+******************/
+
+body {
+	background-color: #111;
+	color: #999;
+	font-weight: 200;
+	font-family: "Helvetica Neue", Helvetica;
+}
+
+
+.socialitem-type {
+	background: #333;
+	font-size: 12px;
+}
