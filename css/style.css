@@ -28,11 +28,16 @@ body {
 * Modules
 ******************/
 
-.socialitem-instagram img {
+.socialitem-instagram > img {
 	max-width: 100%;
 	height: auto;
 	margin-bottom: 10px;
 }
+
+.socialitem > .socialitem-publishdate {
+	display: block;
+	margin-top: 5px;
+}	
 
 .socialitem::before {
 	float: right;
@@ -67,6 +72,11 @@ body {
 .socialitem {
 	background: #222;
 	padding: 10px;
+}
+
+.socialitem > .socialitem-publishdate {
+	font-size: 10px;
+	color: #666;
 }
 
 .socialitem-title {

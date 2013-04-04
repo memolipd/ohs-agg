@@ -29,6 +29,11 @@
 				var instagram_template = $("#instagram_template").html();
 
 				_.each(data.value.items,function(i){
+
+					i = _.extend(i, {
+						'date': new Date(i.pubDate)
+					});
+
 					switch(i.author){
 						case "twitter":
 							$("#feed").append(_.template(twitter_template,{i:i}));
@@ -59,12 +64,18 @@
 	<script type="text/html" id='twitter_template'>
         <li class="socialitem socialitem-twitter">
         	<h3 class="socialitem-title"><%= i.title %></h3>
+        	<time datetime="2009-10-22" pubdate class="socialitem-publishdate">
+        		<%= i.date.toDateString() %>
+        	</time>
         </li>
 	</script>
 
 	<script type="text/html" id='facebook_template'>
         <li class="socialitem socialitem-facebook">
 	    	<h3 class="socialitem-title"><%= i.title %></h3>
+	    	<time datetime="2009-10-22" pubdate class="socialitem-publishdate">
+	    		<%= i.date.toDateString() %>
+	    	</time>
 		</li>
 	</script>
 
@@ -72,6 +83,8 @@
         <li class="socialitem socialitem-instagram">
 	        <img src="<%= i['media:content'].url %>" />
 	        <h3 class="socialitem-title"><%= i.title %></h3>
+	        <time datetime="2009-10-22" pubdate class="socialitem-publishdate">
+	        	<%= i.date.toDateString() %></time>
 	    </li>
 	</script>
 
