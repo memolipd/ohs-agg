@@ -64,7 +64,7 @@
 	<script type="text/html" id='twitter_template'>
         <li class="socialitem socialitem-twitter">
         	<h3 class="socialitem-title"><%= i.title %></h3>
-        	<time datetime="2009-10-22" pubdate class="socialitem-publishdate">
+        	<time datetime="<%= i.date.toISOString() %>" pubdate class="socialitem-publishdate">
         		<%= i.date.toDateString() %>
         	</time>
         </li>
@@ -73,7 +73,7 @@
 	<script type="text/html" id='facebook_template'>
         <li class="socialitem socialitem-facebook">
 	    	<h3 class="socialitem-title"><%= i.title %></h3>
-	    	<time datetime="2009-10-22" pubdate class="socialitem-publishdate">
+	    	<time datetime="<%= i.date.toISOString() %>" pubdate class="socialitem-publishdate">
 	    		<%= i.date.toDateString() %>
 	    	</time>
 		</li>
@@ -83,7 +83,7 @@
         <li class="socialitem socialitem-instagram">
 	        <img src="<%= i['media:content'].url %>" />
 	        <h3 class="socialitem-title"><%= i.title %></h3>
-	        <time datetime="2009-10-22" pubdate class="socialitem-publishdate">
+	        <time datetime="<%= i.date.toISOString() %>" pubdate class="socialitem-publishdate">
 	        	<%= i.date.toDateString() %></time>
 	    </li>
 	</script>
