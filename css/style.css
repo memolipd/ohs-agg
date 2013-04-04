@@ -1,0 +1,19 @@
+body {
+	background-color: #999;
+}
+li {
+	position: relative;
+}
+
+li img {
+	width: 200px;
+}
+.type {
+	background: red;
+	color: white;
+	padding: 5px 8px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
