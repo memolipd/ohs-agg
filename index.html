@@ -33,7 +33,6 @@
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.4.min.js"><\/script>')</script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
 
 	<script type="text/javascript">
 		$(function(){
@@ -41,7 +40,7 @@
 			var PIPE_URL = "http://pipes.yahoo.com/pipes/pipe.run?_id=9d9e40c2b0589de762a385e4312ce535&_render=json";
 
 			$.getJSON(PIPE_URL, function(data) {
-				
+
 				var twitter_template = $("#twitter_template").html();
 				var facebook_template = $("#facebook_template").html();
 				var instagram_template = $("#instagram_template").html();
