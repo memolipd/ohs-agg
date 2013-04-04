@@ -15,6 +15,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
 	<script src="js/jquery.masonry.min.js"></script>
+	<script src="js/jquery.imagesloaded.min.js"></script>
 
 	<script type="text/javascript">
 		$(function(){
@@ -42,12 +43,14 @@
 					}
     			});
 
-    			$('#feed').masonry({
-					// options
-					itemSelector : '.socialitem',
-					columnWidth: function( containerWidth ) {
-						return containerWidth / 3;
-					}
+    			var $container = $('#feed');
+    			$container.imagesLoaded(function(){
+					$container.masonry({
+						itemSelector : '.socialitem',
+						columnWidth: function( containerWidth ) {
+							return containerWidth / 3;
+						}
+					});
 				});
 			});
 		});
