@@ -28,23 +28,32 @@ body {
 * Modules
 ******************/
 
-.socialitem {
-	background: #222;
-	padding: 10px;
-}
-
 .socialitem-instagram img {
 	max-width: 100%;
 	height: auto;
+	margin-bottom: 10px;
 }
 
-.socialitem-type {
-	padding: 5px 8px;
+.socialitem::before {
+	float: right;
+	margin-top: -10px;
+	margin-right: -10px;
+}
+
+.socialitem-instagram::before {
+	content: "Instagram";
 	position: absolute;
-	top: 0;
-	right: 0;
+	right: 10px;
+	background-color: #222;
 }
 
+.socialitem-facebook::before {
+	content: "Facebook";
+}
+
+.socialitem-twitter::before {
+	content: "Twitter";
+}
 /******************
 * Theming
 ******************/
@@ -56,8 +65,23 @@ body {
 	font-family: "Helvetica Neue", Helvetica;
 }
 
+.socialitem {
+	background: #222;
+	padding: 10px;
+}
 
-.socialitem-type {
-	background: #333;
+.socialitem-title {
+	display: block;
+	font-weight: 200;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.socialitem::before {
 	font-size: 12px;
+	padding: 5px 10px;
+	color: #3a3a3a;
+	margin-bottom: 10px;
+	margin-left: 20px;
 }

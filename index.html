@@ -54,18 +54,21 @@
 	</script>
 
 	<script type="text/html" id='twitter_template'>
-        <li class="socialitem socialitem-twitter"><%= i.title %><span class="socialitem-type">twitter</span>	</li>
+        <li class="socialitem socialitem-twitter">
+        	<h3 class="socialitem-title"><%= i.title %></h3>
+        </li>
 	</script>
 
 	<script type="text/html" id='facebook_template'>
-        <li class="socialitem socialitem-facebook"><%= i.title %><span class="socialitem-type">facebook</span>	</li>
+        <li class="socialitem socialitem-facebook">
+	    	<h3 class="socialitem-title"><%= i.title %></h3>
+		</li>
 	</script>
 
 	<script type="text/html" id='instagram_template'>
         <li class="socialitem socialitem-instagram">
-	        <%= i.title %>
 	        <img src="<%= i['media:content'].url %>" />
-	        <span class="socialitem-type">instagram</span>	
+	        <h3 class="socialitem-title"><%= i.title %></h3>
 	    </li>
 	</script>
 
