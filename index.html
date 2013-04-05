@@ -12,7 +12,7 @@
 	<ol id="feed" class="socialitems l-grid">
 	</ol>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
 	<script src="js/jquery.masonry.min.js"></script>
 	<script src="js/jquery.imagesloaded.min.js"></script>
@@ -20,7 +20,7 @@
 	<script type="text/javascript">
 		$(function(){
 
-			var PIPE_URL = "http://pipes.yahoo.com/pipes/pipe.run?_id=9d9e40c2b0589de762a385e4312ce535&_render=json";
+			var PIPE_URL = "http://pipes.yahoo.com/pipes/pipe.run?_id=9d9e40c2b0589de762a385e4312ce535&_render=json&numItems=15";
 
 			$.getJSON(PIPE_URL, function(data) {
 
@@ -52,9 +52,8 @@
     			$container.imagesLoaded(function(){
 					$container.masonry({
 						itemSelector : '.socialitem',
-						columnWidth: function( containerWidth ) {
-							return containerWidth / 3;
-						}
+						isFitWidth: true
+						// columnWidth: 330
 					});
 				});
 			});
